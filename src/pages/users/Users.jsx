@@ -81,7 +81,7 @@ const Users = () => {
                       )}
                     </td>
                     <td>{moment(user.joined).format('MMMM Do YYYY, h:mm:ss a')}</td>
-                    <td>June 20, 2023</td>
+                    <td>May 20, 2024</td>
                   </tr>
                 ))
               : "No Users"}
