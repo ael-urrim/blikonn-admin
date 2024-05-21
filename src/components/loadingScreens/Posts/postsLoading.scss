@@ -1,0 +1,74 @@
+@import "../../../style.scss";
+
+.postsLoading {
+  @include themify($themes) {
+    background-color: themed("cardColor");
+    border-radius: 7px;
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    height: 230px;
+    margin-bottom: 20px;
+
+    .postsLoading-left {
+      .postsLoading-left-img {
+        min-width: 70px;
+        min-height: 70px;
+        border-radius: 50%;
+        background-color: rgb(136, 136, 136, 0.466);
+        animation: children 0.5s ease infinite;
+      }
+    }
+
+    .postsLoading-right {
+      width: 90%;
+
+      .postsLoading-right-upper {
+        display: flex;
+        flex-direction: column;
+
+        .postsLoading-right-upper-name {
+          background-color: rgb(136, 136, 136, 0.466);
+          max-width: 50%;
+          min-height: 20px;
+          border-radius: 5px;
+          margin-bottom: 8px;
+          animation: children 1s ease infinite;
+        }
+
+        .postsLoading-right-upper-time {
+          background-color: rgb(136, 136, 136, 0.466);
+          max-width: 30%;
+          min-height: 20px;
+          border-radius: 5px;
+          margin-bottom: 8px;
+          animation: children 1s ease infinite;
+        }
+
+        .postsLoading-right-upper-text {
+          background-color: rgba(136, 136, 136, 0.466);
+          max-width: 80%;
+          min-height: 20px;
+          border-radius: 5px;
+          margin-bottom: 8px;
+          animation: children 1s ease infinite;
+        }
+
+        .postsLoading-right-upper-img {
+          background-color: rgb(136, 136, 136, 0.466);
+          max-width: 80%;
+          min-height: 110px;
+          border-radius: 5px;
+          margin-bottom: 8px;
+          animation: children 1s ease infinite;
+        }
+      }
+    }
+  }
+
+  @keyframes children {
+    to {
+      opacity: 0.85;
+    }
+  }
+}

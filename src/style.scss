@@ -1,0 +1,133 @@
+// App theme settings
+
+$themes: (
+  light: (
+    primary: #b80303,
+    themeSwitch: #b80303,
+    secondary: #05b2dc,
+    textColor: #000,
+    bg: #fff,
+    logo: #b80303,
+    bgSoft: #dce3e6,
+    textColorSoft: #555,
+    border: lightgray,
+    cardColor: #fff,
+    iconsColor: #b80303,
+    iconsHoverColor: whitesmoke,
+    addPost: #dce3e6,
+    inputColor: rgb(134, 134, 134),
+    hoverColor: whitesmoke,
+    buttonBg: #b80303,
+    buttonBgHover: #9c0101,
+    white: #ffffff,
+    gray: #a8a8a8,
+    red: #df0404,
+    links: #b80303,
+    linkHover: #04bcff,
+    postHover: #f5f5f5,
+    chatLeftBg: #b1b1b1,
+    notifBg: #e3eefd
+  ),
+  dark: (
+    primary: #b80303,
+    themeSwitch: #ffffff,
+    secondary: #05b2dc,
+    textColor: whitesmoke,
+    bg: #222,
+    logo: white,
+    bgSoft: #333,
+    textColorSoft: lightgray,
+    border: #444,
+    borderTwo: #646464,
+    cardColor: #3f3e3e,
+    iconsColor: #b80303,
+    iconsHoverColor: #518397,
+    addPost: #6e6e6e,
+    inputColor: lightgray,
+    hoverColor: whitesmoke,
+    buttonBg: #b80303,
+    buttonBgHover: #9c0101,
+    white: #ffffff,
+    gray: #a8a8a8,
+    red: #df0404,
+    links: #b80303,
+    linkHover: #818181,
+    postHover: #4b4a4a,
+    chatLeftBg: #555,
+    notifBg: #34393f
+  ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+// Custom Font family
+@font-face {
+  font-family: "RubikLight";
+  src: local("Rubik-Light"), url("./fonts/Rubik-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RubikRegular";
+  src: local("Rubik-Regular"),
+    url("./fonts/Rubik-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RubikMedium";
+  src: local("Rubik-Medium"), url("./fonts/Rubik-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RubikSemiBold";
+  src: local("Rubik-SemiBold"),
+    url("./fonts/Rubik-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RubikBold";
+  src: local("Rubik-Bold"), url("./fonts/Rubik-Bold.ttf") format("truetype");
+}
+
+// Make project responsive
+
+// mobile
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+// tablet
+@mixin tablet {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+// Phone desktop
+@mixin phoneDesktop {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

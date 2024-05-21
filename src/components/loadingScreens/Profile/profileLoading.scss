@@ -1,0 +1,92 @@
+@import "../../../style.scss";
+
+.profileLoading {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 70px;
+
+    @include mobile {
+      padding: 20px 10px;
+      overflow-x: hidden;
+    }
+
+    .profileLoading-top {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 8px;
+      margin-bottom: 20px;
+
+      .profileLoading-user-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .profileLoading-user-img {
+          min-width: 70px;
+          min-height: 70px;
+          border-radius: 50%;
+          background-color: rgb(136, 136, 136, 0.651);
+          animation: children 1s ease infinite;
+        }
+        .profileLoading-user-details {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          width: 95%;
+
+          .profileLoading-display_name {
+            display: flex;
+            align-items: center;
+            background-color: rgb(136, 136, 136, 0.651);
+            max-width: 30%;
+            min-height: 20px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            animation: children 1s ease infinite;
+          }
+          .profileLoading-user-name {
+            background-color: rgb(136, 136, 136, 0.651);
+            max-width: 30%;
+            min-height: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            animation: children 1s ease infinite;
+          }
+          .profileLoading-follow-btn {
+            background-color: rgb(136, 136, 136, 0.651);
+            max-width: 40%;
+            min-height: 40px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: children 1s ease infinite;
+          }
+        }
+      }
+
+      .profileLoading-activities {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .profileLoading-activities-children {
+          background-color: rgb(136, 136, 136, 0.651);
+          min-width: 30%;
+          min-height: 20px;
+          border-radius: 5px;
+          animation: children 1s ease infinite;
+        }
+      }
+    }
+  }
+
+  @keyframes children {
+    to {
+      opacity: 0.5;
+    }
+  }
+}

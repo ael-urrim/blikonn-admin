@@ -1,0 +1,92 @@
+@import "../../style.scss";
+
+.pages {
+  @include themify($themes) {
+    flex: 6;
+    background-color: themed("bgSoft");
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "RubikRegular";
+    overflow: hidden;
+
+    .page-title {
+      color: themed("textColor");
+      margin-bottom: 10px;
+      font-family: "RubikBold";
+      font-size: 22px;
+    }
+
+    .pages-card {
+      background-color: themed("cardColor");
+      padding: 10px;
+      border: 1px solid themed("border");
+      border-radius: 5px;
+      width: 98%;
+
+      .top {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+
+        .left {
+          font-family: "RubikSemiBold";
+          color: themed("textColor");
+        }
+
+        .link {
+          text-decoration: none;
+          color: #fff;
+          padding: 10px;
+          background-color: themed("buttonBg");
+          transition-duration: 0.3s;
+          border-radius: 5px;
+        }
+
+        .link:hover {
+          background-color: themed("buttonBgHover");
+        }
+      }
+
+      .table {
+
+        table {
+          min-width: 100%;
+          border: 1px solid themed("border");
+          border-collapse: collapse;
+          color: themed("textColor");
+
+          thead {
+            th {
+              border: 2px solid themed("border");
+              border-collapse: collapse;
+              padding: 10px;
+              text-align: center;
+              font-size: 14px;
+            }
+          }
+
+          tbody {
+            td {
+              border: 2px solid themed("border");
+              border-collapse: collapse;
+              padding: 10px;
+              text-align: left;
+              font-size: 14px;
+
+              .link {
+                color: themed("secondary");
+                text-decoration: none;
+              }
+
+              .link:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

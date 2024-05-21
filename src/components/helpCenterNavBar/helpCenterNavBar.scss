@@ -1,0 +1,232 @@
+@import "../../style.scss";
+
+.help-navbar {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+    justify-content: space-between;
+    height: 50px;
+    border-bottom: 1px solid themed("border");
+    position: sticky;
+    top: 0;
+    background-color: themed("bg");
+    color: themed("textColor");
+    margin-bottom: 20px;
+    z-index: 88;
+
+    @include mobile {
+      padding: 5px 20px;
+    }
+
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      .logo {
+        font-size: 20px;
+        color: themed("logo");
+        font-family: "RubikBold";
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        padding: 5px;
+        background-color: transparent;
+        transition-duration: 0.1s;
+
+        input {
+          border: none;
+          width: 500px;
+          outline: none;
+          background-color: transparent;
+          color: themed("textColor");
+          font-family: "RubikRegular";
+          font-size: 15px;
+
+          @include mobile {
+            display: none;
+          }
+
+          @include tablet {
+            width: 300px;
+          }
+        }
+      }
+
+      .search:hover {
+        border: 1px solid themed("border");
+        background-color: transparent;
+      }
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+
+      @include mobile {
+        gap: 20px;
+      }
+
+      .messages {
+        color: themed("logo");
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      .dark-mode {
+        color: themed("primary");
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .profile-img {
+
+        @include mobile {
+          display: none;
+        }
+
+        @include tablet {
+          display: none;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+
+        img:focus {
+          outline: none;
+          background-color: transparent;
+        }
+
+        img:active {
+          outline: none !important;
+          background-color: transparent !important;
+        }
+      }
+
+      // Mobile menu controller
+      .profile-img-mobile {
+        display: none;
+
+        @include mobile {
+          display: block;
+        }
+
+        @include tablet {
+          display: block;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+
+        img:focus {
+          outline: none;
+          background-color: transparent;
+        }
+
+        img:active {
+          outline: none !important;
+          background-color: transparent !important;
+        }
+      }
+
+      // menu bar
+      .menu-bar{
+        display: none;
+
+        .icon{
+          font-size: 20px;
+          color: themed("textColor");
+        }
+
+        @include mobile {
+          display: block;
+        }
+      }
+    }
+
+    .overlay {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.4s;
+      cursor: pointer;
+
+      @include mobile {
+        display: none;
+      }
+
+      .dropdown-links {
+        position: fixed;
+        z-index: 88;
+
+        .dropdown {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: themed("cardColor");
+          padding: 10px;
+          border: themed("border");
+          border-radius: 6px;
+          width: 200px;
+          margin-top: -250px;
+          margin-left: 450px;
+
+          @include tablet {
+            margin-top: -520px;
+            margin-left: 180px;
+          }
+
+          .links {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: themed("textColorSoft");
+            font-size: 16px;
+            font-family: "RubikRegular";
+            padding: 5px 10px;
+            transition-duration: 0.1s;
+
+            .icons {
+              margin-right: 10px;
+            }
+          }
+
+          .links:hover {
+            background-color: #087ca7;
+            color: whitesmoke;
+          }
+        }
+      }
+    }
+  }
+}

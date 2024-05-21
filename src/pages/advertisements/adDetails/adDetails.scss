@@ -1,0 +1,124 @@
+@import "../../../style.scss";
+
+.ad-details {
+  @include themify($themes) {
+    flex: 6;
+    background-color: themed("bgSoft");
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "RubikRegular";
+    overflow: hidden;
+
+    .breadcrumbs {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-family: "RubikRegular";
+  
+        p {
+          color: themed("textColor");
+        }
+  
+        .link {
+          color: themed("textColor");
+          text-decoration: none;
+        }
+  
+        .link:hover {
+          text-decoration: underline;
+        }
+      }
+
+    .page-title {
+      color: themed("textColor");
+      margin-bottom: 10px;
+      font-family: "RubikBold";
+      font-size: 22px;
+    }
+
+    .ad-details-card {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 5px;
+      color: themed("textColor");
+
+      .top {
+        margin-bottom: 15px;
+        display: flex;
+        gap: 20px;
+        align-items: baseline;
+
+        :nth-child(1){
+            padding: 10px;
+            background-color: green;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition-duration: 0.3s;
+
+            &:hover{
+                background-color: #03a303;
+            }
+        }
+
+        :nth-child(2){
+            padding: 10px;
+            background-color: #c70505;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition-duration: 0.3s;
+            
+            &:hover{
+                background-color: #b10303;
+            }
+        }
+
+        .link{
+            padding: 10px;
+            text-decoration: none;
+            background-color: themed("buttonBg");
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition-duration: 0.3s;
+            
+            &:hover{
+                background-color: themed("buttonBgHover");
+            }
+        }
+
+      }
+
+      .table {
+        flex: 1;
+        table {
+          tr {
+            margin-bottom: 10px;
+
+            td {
+              padding: 20px;
+
+              img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+              }
+            }
+
+            .label {
+              font-family: "RubikSemiBold";
+            }
+
+            .value {
+              font-family: "RubikRegular";
+            }
+          }
+        }
+      }
+    }
+  }
+}

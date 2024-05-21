@@ -1,0 +1,262 @@
+@import "../../style.scss";
+
+.messaging {
+  @include themify($themes) {
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    justify-content: baseline;
+    border-radius: 5px 5px 0 0;
+    border: 2px solid themed("primary");
+    border-bottom: 0;
+    width: 550px;
+    z-index: 888;
+    color: themed("textColor");
+    display: none;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    .messaging-header {
+      background-color: themed("primary");
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: "RubikMedium";
+      font-size: 16px;
+      color: #fff;
+      height: 30px;
+
+      .messaging-header-right {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        .icon {
+          font-size: 30px;
+          font-weight: 700;
+        }
+
+        .notification {
+          position: relative;
+
+          .notification-count {
+            background-color: #df0404;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -1px;
+            right: -5px;
+            font-size: 11px;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .switch {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .messaging-body {
+      background-color: themed("cardColor");
+      padding: 0;
+      display: flex;
+      height: 100%;
+      flex: 1;
+      position: relative;
+
+      .messaging-body-left {
+        flex: 2.4;
+        width: 100%;
+        overflow-y: scroll;
+        padding-bottom: 33px;
+
+        .searchUser {
+          padding-top: 5px;
+          background-color: whitesmoke;
+
+          input {
+            background-color: whitesmoke;
+            padding: 5px;
+            border: none;
+            border-bottom: 2px solid #888888;
+            outline: none;
+            font-family: "RubikRegular";
+          }
+        }
+
+        .useList {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          width: 100%;
+          background-color: themed("chatLeftBg");
+          padding: 10px 5px;
+          transition: 0.2s ease;
+
+          &:hover {
+            cursor: pointer;
+            background-color: themed("border");
+          }
+
+          .useList-left {
+            img {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+            }
+          }
+
+          .useList-right {
+            font-family: "RubikRegular";
+            width: 100%;
+
+            .userName {
+              font-size: 14px;
+              font-weight: 500;
+            }
+
+            .lastMessage {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .messaging-body-right {
+        flex: 5;
+        background-color: themed("bgSoft");
+        padding: 7px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        padding-bottom: 30px;
+        position: relative;
+        width: 100%;
+
+        .chat-screen {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 7px;
+          height: 100%;
+          padding-bottom: 50em;
+          margin-bottom: 9.5em;
+
+          .incoming-msg {
+            background-color: themed("cardColor");
+            padding: 5px;
+            border-radius: 5px;
+            width: 70%;
+            font-family: "RubikRegular";
+            font-size: 14px;
+            align-self: flex-start;
+            color: themed("textColor");
+          }
+
+          .outgoing-msg {
+            background-color: themed("primary");
+            padding: 5px;
+            border-radius: 5px;
+            width: 70%;
+            font-family: "RubikRegular";
+            align-self: flex-end;
+            color: #fff;
+            font-size: 14px;
+            color: themed("white");
+          }
+        }
+        form {
+          margin-top: auto;
+          margin-bottom: auto;
+          position: sticky;
+          bottom: 0;
+          margin-left: -7px;
+          right: 0;
+          width: 100%;
+          background-color: themed("cardColor");
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          padding: 10px;
+
+          .left {
+            width: 100%;
+
+            textarea {
+              resize: none;
+              padding: 5px;
+              width: 95%;
+              outline: none;
+              border-radius: 5px;
+              border: 1px solid themed("addPost");
+              background-color: transparent;
+              color: themed("textColor");
+              font-family: "RubikRegular";
+
+              &::placeholder{
+                font-style: italic;
+              }
+            }
+          }
+
+          .right {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .icon {
+              font-size: 25px;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+
+            input {
+              display: none;
+            }
+
+            img {
+              width: 30px;
+              height: 30px;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+
+            button {
+              padding: 5px;
+              background-color: themed("primary");
+              color: #fff;
+              border: 1px solid themed("border");
+              border-radius: 5px;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

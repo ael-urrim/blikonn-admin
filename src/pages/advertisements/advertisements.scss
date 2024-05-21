@@ -1,0 +1,113 @@
+@import "../../style.scss";
+
+.advertisements {
+  @include themify($themes) {
+    flex: 6;
+    background-color: themed("bgSoft");
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "RubikRegular";
+    overflow: hidden;
+
+    .page-title {
+      color: themed("textColor");
+      margin-bottom: 10px;
+      font-family: "RubikBold";
+      font-size: 22px;
+    }
+
+    .advertisements-card {
+      background-color: themed("cardColor");
+      padding: 10px;
+      border: 1px solid themed("border");
+      border-radius: 5px;
+      width: 98%;
+
+      .top {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+
+        .left {
+          font-family: "RubikSemiBold";
+          color: themed("textColor");
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+          .link {
+            text-decoration: none;
+            color: themed("textColor");
+            transition-duration: 0.3s;
+            border-radius: 5px;
+          }
+
+          .link:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .table {
+        table {
+          min-width: 100%;
+          border: 1px solid themed("border");
+          border-collapse: collapse;
+          color: themed("textColor");
+
+          thead {
+            th {
+              border: 2px solid themed("border");
+              border-collapse: collapse;
+              padding: 10px;
+              text-align: center;
+              font-size: 14px;
+            }
+          }
+
+          tbody {
+
+            tr{
+              .approved{
+                padding: 5px;
+                background-color: #97e98c;
+                color: #000;
+              }
+              .pending{
+                padding: 5px;
+                background-color: #f0e98b;
+                color: #000;
+              }
+              .rejected{
+                padding: 5px;
+                background-color: #e46b6b;
+                color: #000;
+              }
+            }
+            td {
+              border: 2px solid themed("border");
+              border-collapse: collapse;
+              padding: 10px;
+              text-align: left;
+              font-size: 14px;
+
+              .link {
+                color: themed("secondary");
+                text-decoration: none;
+              }
+
+              .link:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

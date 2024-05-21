@@ -1,0 +1,21 @@
+@import "../../style.scss";
+
+.loadingScreen {
+  @include themify($themes) {
+    position: fixed;
+    background-color: rgba(241, 241, 241, 0.26);
+    z-index: 999;
+    font-size: 50px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: overlay 2s ease infinite;
+  }
+
+  @keyframes overlay {
+    to {
+      opacity: 0.85;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+@import "../../style.scss";
+
+.posts-card {
+  @include themify($themes) {
+    .profile-post {
+      display: flex;
+      gap: 15px;
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: themed("border");
+      border-radius: 4px;
+      margin-bottom: 3px;
+
+      .left {
+        img {
+          width: 40px;
+          height: 40px;
+          border: 2px solid themed("primary");
+          border-radius: 50%;
+          object-fit: cover;
+
+          @include mobile {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+
+      .right {
+        width: 90%;
+        .upper {
+          .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            @include mobile {
+              margin-top: -10px;
+            }
+
+            .name {
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+              gap: 3px;
+
+              .display-name {
+                font-family: "RubikSemiBold";
+                display: flex;
+                align-items: center;
+
+                .link {
+                  font-size: 16px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  color: themed("textColor");
+                  margin-bottom: 5px;
+
+                  @include mobile {
+                    font-size: 14px;
+                  }
+                }
+
+                .link:focus {
+                  background-color: transparent;
+                }
+
+                .link:hover {
+                  text-decoration: none;
+                }
+
+                img {
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+
+              .time {
+                color: themed("textColorSoft");
+                font-size: 12px;
+                font-family: "RubikRegular";
+              }
+            }
+
+            .options {
+              cursor: pointer;
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              color: themed("textColor");
+              border-radius: 50%;
+            }
+
+            .options:hover {
+              background-color: themed("bgSoft");
+              border: themed("border");
+            }
+          }
+        }
+
+        .middle {
+          width: 97%;
+
+          .post-text {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: themed("textColor");
+            font-family: "RubikRegular";
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+
+          .post-img {
+            img {
+              width: 100%;
+              min-height: 300px;
+              object-fit: cover;
+              margin-bottom: 10px;
+              margin-top: 5px;
+
+              @include mobile {
+                min-height: 200px;
+              }
+            }
+          }
+        }
+
+        .bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          width: 70%;
+          gap: 20px;
+          font-family: "RubikRegular";
+
+          .link {
+            color: themed("textColorSoft");
+            text-decoration: none;
+            display: flex;
+            align-items: baseline;
+
+            .post-reactions {
+              color: themed("textColorSoft");
+              display: flex;
+              gap: 5px;
+              align-items: baseline;
+              cursor: pointer;
+              padding: 7px;
+              border-radius: 5px;
+
+              .icon {
+                font-size: 20px;
+
+                @include mobile {
+                  font-size: 16px;
+                }
+              }
+
+              p {
+                font-size: 14px;
+                @include mobile {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+
+          .views {
+            display: flex;
+            gap: 6;
+            align-items: baseline;
+          }
+
+          .post-reactions:hover {
+            background-color: themed("bgSoft");
+          }
+        }
+      }
+    }
+  }
+}

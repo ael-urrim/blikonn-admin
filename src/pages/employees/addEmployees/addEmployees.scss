@@ -1,0 +1,260 @@
+@import "../../../style.scss";
+
+.add-employees {
+  @include themify($themes) {
+    flex: 6;
+    background-color: themed("bgSoft");
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "RubikRegular";
+
+    @include mobile {
+      padding: 3px;
+    }
+
+    @include tablet {
+      padding: 3px;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-family: "RubikRegular";
+
+      p {
+        color: themed("textColor");
+      }
+
+      .link {
+        color: themed("textColor");
+        text-decoration: none;
+      }
+
+      .link:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .page-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      @include mobile {
+        flex-direction: column;
+      }
+
+      @include tablet {
+        flex-direction: column;
+      }
+
+      .page-title {
+        color: themed("textColor");
+        margin-bottom: 10px;
+        font-family: "RubikBold";
+        font-size: 22px;
+      }
+
+      .generatePassword {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 10px;
+
+        .copiedPass {
+          color: #06c006;
+          font-size: 12px;
+          font-family: "RubikRegular";
+          color: themed("textColor");
+        }
+
+        .password {
+          margin-bottom: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 15px;
+          font-family: "RubikRegular";
+          color: themed("textColor");
+
+          .icon {
+            cursor: pointer;
+          }
+        }
+
+        .button {
+          padding: 5px 10px;
+          color: #fff;
+          background-color: themed("buttonBg");
+          border: none;
+          border-radius: 3px;
+          transition: 0.2s ease;
+
+          &:hover {
+            background-color: themed("buttonBgHover");
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .add-employees-card {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 5px;
+      color: themed("textColor");
+
+      @include mobile {
+        padding: 20px 8px;
+      }
+  
+      @include tablet {
+        padding: 20px 8px;
+      }
+
+      form {
+        width: 90%;
+
+        .top {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 40px;
+
+          @include mobile {
+            flex-direction: column;
+          }
+    
+          @include tablet {
+            flex-direction: column;
+          }
+
+          .left {
+            flex: 1;
+
+            .input {
+              display: flex;
+              align-items: flex-start;
+              justify-content: flex-start;
+              flex-direction: column;
+              gap: 5px;
+
+              label {
+                font-size: 16px;
+                font-family: "RubikSemiBold";
+              }
+
+              input {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                font-family: "RubikRegular";
+                color: themed("textColor");
+                outline: none;
+                border: 2px solid themed("border");
+                border-radius: 5px;
+                background-color: transparent;
+                margin-bottom: 15px;
+              }
+
+              select {
+                padding: 10px;
+                font-size: 14px;
+                font-family: "RubikRegular";
+                color: themed("textColor");
+                outline: none;
+                border: 2px solid themed("border");
+                border-radius: 5px;
+                background-color: transparent;
+              }
+
+              option {
+                font-size: 16px;
+                background-color: themed("bgSoft");
+              }
+            }
+          }
+
+          .right {
+            flex: 1;
+
+            .input {
+              display: flex;
+              align-items: flex-start;
+              justify-content: flex-start;
+              flex-direction: column;
+              gap: 5px;
+              margin-bottom: 15px;
+
+              label {
+                font-size: 16px;
+                font-family: "RubikSemiBold";
+              }
+
+              input {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                font-family: "RubikRegular";
+                color: themed("textColor");
+                outline: none;
+                border: 2px solid themed("border");
+                border-radius: 5px;
+                background-color: transparent;
+              }
+
+              select {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                font-family: "RubikRegular";
+                color: themed("textColor");
+                outline: none;
+                border: 2px solid themed("border");
+                border-radius: 5px;
+                background-color: transparent;
+              }
+
+              option {
+                font-size: 16px;
+                background-color: themed("bgSoft");
+              }
+            }
+          }
+        }
+
+        .bottom {
+          margin-top: 20px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          width: 100%;
+
+          button {
+            padding: 10px;
+            border: none;
+            background-color: themed("buttonBg");
+            cursor: pointer;
+            font-family: "RubikMedium";
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+          }
+
+          button:hover {
+            padding: 10px;
+            border: none;
+            background-color: themed("buttonBgHover");
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+@import "../../style.scss";
+
+.support-inbox {
+  @include themify($themes) {
+    flex: 6;
+    background-color: themed("bgSoft");
+    max-height: 540px;
+    padding: 20px;
+    font-family: "RubikRegular";
+    position: sticky;
+    overflow: hidden;
+
+    .page-title {
+      color: themed("textColor");
+      margin-bottom: 10px;
+      font-family: "RubikBold";
+      font-size: 22px;
+      margin-top: 20px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .support-inbox-card {
+      padding: 10px;
+      width: 98%;
+      position: sticky;
+
+      .support-inbox-top {
+        margin-bottom: 15px;
+        padding: 0 10px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        .left {
+          font-family: "RubikSemiBold";
+          color: themed("textColor");
+        }
+
+        .right {
+          background-color: themed("buttonBg");
+          font-family: "RubikRegular";
+          color: #fff;
+          border-radius: 4px;
+          padding: 10px;
+          cursor: pointer;
+          transition-duration: 0.3s;
+
+          &:hover {
+            background-color: themed("buttonBgHover");
+          }
+        }
+      }
+    }
+
+    .support-inbox-bottom {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      position: sticky;
+      top: 55px;
+      max-height: 430px;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .support-inbox-left {
+        //background-color: themed("cardColor");
+        border: 1px solid themed("border");
+        flex: 1;
+        font-family: "RubikRegular";
+        position: sticky;
+        max-height: 400px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: themed("textColorSoft");
+          text-decoration: none;
+          padding: 10px;
+          border-radius: 3px;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 0 10px;
+            object-fit: cover;
+          }
+
+          h3 {
+            font-size: 14px;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+
+        .link:hover {
+          background-color: themed("bgSoft");
+        }
+      }
+
+      .support-inbox-right {
+        //background-color: themed("cardColor");
+        border: 1px solid themed("border");
+        flex: 3;
+        border-radius: 5px;
+        height: 400px;
+        position: sticky;
+        //height: 100vh;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .support-inbox-content {
+          padding: 10px;
+          background-color: themed("bgSoft");
+          height: 100%;
+          overflow-y: scroll;
+          font-family: "RubikRegular";
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          .incoming-msgs {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            align-self: flex-start;
+            img {
+              width: 40px;
+              height: 40px;
+              object-fit: cover;
+            }
+            .msg-details {
+              align-self: flex-start;
+              padding: 10px;
+              background-color: themed("cardColor");
+              margin-bottom: 10px;
+              width: 80%;
+              border-radius: 5px;
+            }
+          }
+
+          .outgoing-msgs {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-end;
+            padding: 10px;
+            background-color: #087ca7;
+            margin-bottom: 10px;
+            width: 50%;
+            border-radius: 5px;
+            color: #fff;
+
+            .msg-details {
+              text-align: right;
+
+              p {
+                text-align: left;
+              }
+            }
+          }
+        }
+
+        form {
+          position: sticky;
+          bottom: 0;
+
+          input {
+            width: 86%;
+            padding: 8px;
+            outline: none;
+            font-family: "RubikRegular";
+          }
+
+          input::placeholder {
+            font-style: italic;
+          }
+
+          button {
+            padding: 10px;
+            width: 90px;
+            font-family: "RubikRegular";
+            background-color: themed("buttonBg");
+            cursor: pointer;
+            transition-duration: 0.3s;
+            border: 1px solid themed("boder");
+            color: white;
+          }
+
+          button:hover {
+            background-color: themed("buttonBgHover");
+          }
+        }
+      }
+    }
+  }
+}

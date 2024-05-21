@@ -1,0 +1,65 @@
+@import "../../style.scss";
+
+.HelpCenterLeftbar {
+    @include themify($themes){
+        flex: 1;
+        background-color: themed("bgSoft");
+        color: themed("textColor");
+        padding-left: 40px;
+        position: sticky;
+        top: 55px;
+        height: 100vh;
+        overflow: scroll;
+        margin-top: -25px;
+
+        @include mobile {
+            display: none;
+        }
+
+        @include tablet {
+            padding-left: 20px;
+            margin-right: -10px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card-one {
+            background-color: themed("cardColor");
+            width: 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            border: 1px solid themed("border");
+
+            .link {
+                
+                display: flex;
+                align-items: center;
+                color: themed("textColor");
+                text-decoration: none;
+                font-size: 18px;
+                font-family: "RubikRegular";
+                margin-bottom: 20px;
+
+                .icons {
+                    color: themed("iconsColor");
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+            }
+
+            .link:hover {
+                text-decoration: underline;
+            }
+            
+        }
+
+        
+    }
+}

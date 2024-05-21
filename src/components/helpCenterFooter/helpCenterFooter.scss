@@ -1,0 +1,61 @@
+@import "../../style.scss";
+
+.links-card {
+  @include themify($themes) {
+    flex: 1;
+    background-color: #087CA7;
+    color: white;
+    padding: 20px 120px;
+    overflow: auto;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      overflow-x: hidden;
+      max-width: fit-content;
+    }
+
+    @include tablet{
+      padding: 20px 10px;
+    }
+
+    .title {
+      font-family: "RubikSemiBold";
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      @include mobile {
+        flex-direction: column;
+        gap: 25px;
+        margin-left: 10px;
+      }  
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .links {
+          text-decoration: none;
+          font-family: "RubikRegular";
+          color: white;
+        }
+
+        .links:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .bottom {
+      font-family: "RubikBold";
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@import "../../style.scss";
+
+.users {
+  @include themify($themes) {
+    flex: 6;
+    background-color: themed("bgSoft");
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "RubikRegular";
+    overflow: hidden;
+
+    .page-title {
+      color: themed("textColor");
+      margin-bottom: 10px;
+      font-family: "RubikBold";
+      font-size: 22px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .users-card {
+      background-color: themed("cardColor");
+      padding: 10px;
+      border: 1px solid themed("border");
+      width: 98%;
+      overflow-x: scroll;
+
+      .top {
+        margin-bottom: 15px;
+        padding: 0 10px;
+
+        .left {
+          font-family: "RubikSemiBold";
+          color: themed("textColor");
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      border: 1px solid themed("border");
+      border-collapse: collapse;
+      color: themed("textColor");
+
+      thead {
+        th {
+          border: 2px solid themed("border");
+          border-collapse: collapse;
+          padding: 10px;
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+
+      tbody {
+        td {
+          border: 2px solid themed("border");
+          border-collapse: collapse;
+          padding: 10px;
+          text-align: left;
+          min-width: 100px;
+          font-size: 14px;
+
+          .link {
+            color: themed("textColor");
+            text-decoration: none;
+          }
+
+          .link:hover {
+            text-decoration: underline;
+          }
+
+          img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

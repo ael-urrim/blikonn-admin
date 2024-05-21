@@ -1,0 +1,180 @@
+@import "../../style.scss";
+
+.notifications {
+  @include themify($themes) {
+    flex: 2;
+    background-color: themed("bgSoft");
+    margin-top: -25px;
+    padding: 20px 70px;
+    color: themed("textColor");
+    min-height: 100vh;
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    @include tablet {
+      padding: 3px;
+      margin-top: -22px;
+    }
+
+    .notifications-card {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 4px;
+      min-height: 100vh;
+
+      @include tablet {
+        padding: 5px;
+      }
+
+      .notif-top {
+        font-family: "RubikMedium";
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 550;
+
+        .notif-settings {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+
+          p{
+            font-family: "RubikMedium";
+            font-size: 16px;
+
+            &:hover{
+              cursor: pointer;
+              text-decoration: underline;
+            }
+
+            @include tablet {
+              font-size: 14px;
+            }
+          }
+
+          .link {
+            color: themed("textColor");
+            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            gap: 0;
+            align-items: baseline;
+            border-radius: 50%;
+          }
+
+          .link:hover {
+            background-color: themed("bgSoft");
+          }
+        }
+      }
+
+      hr {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      .notif-body {
+        font-family: "RubikRegular";
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 95%;
+
+        @include mobile {
+          padding: 10px 5px;
+        }
+
+        .link {
+          &:hover {
+            background-color: themed("bgSoft");
+            cursor: pointer;
+          }
+
+          span {
+            &:hover {
+              background-color: themed("bgSoft");
+              cursor: pointer;
+            }
+          }
+        }
+
+        .modebg {
+          background-color: themed("notifBg");
+          transition: 0.5 ease;
+        }
+
+        .modebgtr {
+          background-color: transparent;
+        }
+
+        .notifContent {
+          color: themed("textColorSoft");
+          text-decoration: none;
+          padding: 10px;
+          margin-bottom: 2px;
+          border-radius: 3px;
+          width: 100%;
+          transition: 0.5 ease;
+
+          &:hover {
+            background-color: themed("bgSoft");
+            cursor: pointer;
+          }
+
+          @include mobile {
+            padding: 10px 5px;
+          }
+
+          .link {
+            text-decoration: none;
+            font-weight: bold;
+            color: themed("textColor");
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          h3 {
+            font-size: 14px;
+
+            .link {
+              text-decoration: none;
+              font-weight: bold;
+              color: themed("textColor");
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          p {
+            font-size: 14px;
+
+            .link {
+              text-decoration: none;
+              font-weight: bold;
+              color: themed("textColor");
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          &:hover {
+            background-color: themed("bgSoft");
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

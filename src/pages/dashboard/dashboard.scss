@@ -1,0 +1,139 @@
+@import "../../style.scss";
+
+.dashboard {
+  @include themify($themes) {
+    flex: 6;
+    background-color: themed("bgSoft");
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    font-family: "RubikRegular";
+
+    .page-title {
+      color: themed("textColor");
+      margin-bottom: 10px;
+      font-family: "RubikBold";
+      font-size: 22px;
+    }
+
+    .top {
+      margin-bottom: 10px;
+
+      .dashboard-users {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        @include mobile {
+          flex-direction: column;
+        }
+
+        @include tablet {
+          flex-direction: column;
+        }
+
+        .card {
+          background-color: themed("cardColor");
+          color: themed("textColor");
+          border-radius: 3px;
+          padding: 10px;
+          width: 25%;
+          height: 80px;
+          flex: 1;
+
+          @include mobile {
+            width: 100%;
+          }
+  
+          @include tablet {
+            width: 100%;
+          }
+
+          .title {
+            font-size: 18px;
+            font-family: "RubikMedium";
+            margin-bottom: 10px;
+          }
+
+          .value {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .middle {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      .chart {
+        @include mobile {
+          display: flex;
+          flex-direction: column;
+          
+        }
+        @include tablet {
+          display: flex;
+          flex-direction: column;
+          
+        }
+      }
+
+      .users-chart {
+        flex: 1;
+        background-color: themed("cardColor");
+        padding: 20px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        color: themed("textColor");
+        font-family: "RubikRegular";
+
+        h3 {
+          margin-bottom: 10px;
+        }
+      }
+
+      .sales-chart {
+        flex: 1;
+        background-color: themed("cardColor");
+        padding: 20px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        color: themed("textColor");
+        font-family: "RubikRegular";
+
+        h3 {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .bottom{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 30px;
+
+      .left{
+        flex: 1;
+        background-color: themed("cardColor");
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        padding: 10px;
+        height: 300px;
+      }
+
+      .right{
+        flex: 1;
+        background-color: themed("cardColor");
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        padding: 10px;
+        height: 300px;
+      }
+    }
+  }
+}

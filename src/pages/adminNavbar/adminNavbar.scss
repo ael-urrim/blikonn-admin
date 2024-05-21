@@ -1,0 +1,365 @@
+@import "../../style.scss";
+
+.admin-navbar {
+  @include themify($themes) {
+    background-color: themed("bg");
+    border-bottom: 1px solid themed("border");
+    color: themed("textColor");
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    font-family: Calibri;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    .left {
+      text-decoration: none;
+      color: themed("logo");
+      font-family: "RubikBold";
+      font-size: 26px;
+
+      @include mobile {
+        font-size: 20px;
+      }
+
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .notif {
+        cursor: pointer;
+
+        position: relative;
+        .icons {
+          font-size: 30px;
+          color: themed("iconsColor");
+        }
+
+        p {
+          font-size: 12px;
+          position: absolute;
+          top: -5px;
+          right: -8px;
+          padding: 3px;
+          background-color: #c70303;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          color: #fff;
+          font-weight: 550;
+          border: 2px solid #fff;
+        }
+      }
+
+      .inbox {
+        cursor: pointer;
+        position: relative;
+
+        .icons {
+          font-size: 30px;
+          color: #08a;
+        }
+
+        p {
+          font-size: 12px;
+          position: absolute;
+          top: -5px;
+          right: -10px;
+          padding: 3px;
+          background-color: #c70303;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          color: #fff;
+          font-weight: 550;
+          border: 2px solid #fff;
+        }
+      }
+
+      .dark-mode-switch {
+        color: themed("themeSwitch");
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .user-name {
+        font-size: 16px;
+        font-family: "RubikRegular";
+        text-decoration: underline;
+
+        @include mobile {
+          display: none;
+        }
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      .user-img {
+        cursor: pointer;
+
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .menu-overlay {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.4s;
+      cursor: pointer;
+
+      .dropdown-links {
+        position: relative;
+        z-index: 88;
+
+        .dropdown {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: themed("cardColor");
+          border: 1px solid themed("border");
+          padding: 10px;
+          border-radius: 6px;
+          width: 200px;
+          margin-top: -250px;
+          margin-left: 450px;
+
+          .links {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: "RubikRegular";
+            color: themed("textColorSoft");
+            padding: 5px 10px;
+            transition-duration: 0.1s;
+
+            .icons {
+              margin-right: 10px;
+            }
+          }
+
+          .links:hover {
+            background-color: #087ca7;
+            color: whitesmoke;
+          }
+        }
+      }
+    }
+
+    .inbox-overlay {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.4s;
+      cursor: pointer;
+
+      .dropdown-links {
+        position: relative;
+        z-index: 88;
+
+        .dropdown {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: themed("cardColor");
+          border: 1px solid themed("border");
+          padding: 10px;
+          border-radius: 6px;
+          width: 200px;
+          margin-top: -250px;
+          margin-left: 450px;
+
+          p {
+            .link {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #087ca7;
+              color: #fff;
+              padding: 5px 10px;
+              text-decoration: none;
+            }
+            .link:hover {
+              background-color: #05b2dc;
+            }
+          }
+
+          .links {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: themed("textColor");
+            font-size: 16px;
+            font-family: "RubikRegular";
+            padding: 5px 10px;
+            transition-duration: 0.1s;
+
+            .notif {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              .left {
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  object-fit: cover;
+                }
+              }
+
+              .right {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+                font-size: 11px;
+
+                .name {
+                  font-weight: 600;
+                  color: themed("textColorSoft");
+                }
+
+                .description {
+                  color: themed("textColorSoft");
+                }
+              }
+            }
+          }
+
+          .links:hover {
+            background-color: themed("linkHover");
+          }
+        }
+      }
+    }
+
+    .notif-overlay {
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .dropdown-links {
+        position: relative;
+        z-index: 88;
+
+        .dropdown {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: themed("cardColor");
+          border: 1px solid themed("border");
+          padding: 10px;
+          border-radius: 6px;
+          width: 200px;
+          margin-top: -250px;
+          margin-left: 450px;
+
+          p {
+            .link {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #087ca7;
+              color: #fff;
+              padding: 5px 10px;
+              text-decoration: none;
+            }
+            .link:hover {
+              background-color: #05b2dc;
+            }
+          }
+
+          .links {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: themed("textColor");
+            font-size: 16px;
+            font-family: "RubikRegular";
+            padding: 5px 10px;
+            transition-duration: 0.1s;
+
+            .notif {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              .left {
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  object-fit: cover;
+                }
+              }
+
+              .right {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+                font-size: 11px;
+
+                .name {
+                  font-weight: 600;
+                  color: themed("textColorSoft");
+                }
+
+                .description {
+                  color: themed("textColorSoft");
+                }
+              }
+            }
+          }
+
+          .links:hover {
+            background-color: themed("linkHover");
+          }
+        }
+      }
+    }
+  }
+}

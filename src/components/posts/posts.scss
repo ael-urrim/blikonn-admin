@@ -1,0 +1,187 @@
+@import "../../style.scss";
+
+.posts-card {
+  @include themify($themes) {
+    // display: flex;
+    // gap: 5px;
+    // background-color: themed("cardColor");
+    // padding: 20px;
+    // border: themed("border");
+    // border-radius: 8px;
+    // margin-bottom: 20px;
+
+    .post {
+      display: flex;
+      gap: 5px;
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: themed("border");
+      border-radius: 4px;
+      margin-bottom: 10px;
+
+      .left {
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 0 10px;
+          object-fit: cover;
+
+          @include mobile {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+
+      .right {
+        width: 90%;
+        .upper {
+          .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include mobile {
+              margin-top: -10px;
+            }
+
+            .name {
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+              gap: 3px;
+
+              .display-name {
+                font-family: "RubikSemiBold";
+                display: flex;
+                align-items: center;
+
+                .link {
+                  font-size: 16px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  color: themed("textColor");
+                  margin-bottom: 5px;
+
+                  @include mobile {
+                    font-size: 14px;
+                  }
+                }
+
+                .link:focus {
+                  background-color: transparent;
+                }
+
+                .link:hover {
+                  text-decoration: underline;
+                }
+
+                img {
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+
+              .time {
+                color: themed("textColorSoft");
+                font-size: 12px;
+                font-family: "RubikLight";
+              }
+            }
+
+            .options {
+              cursor: pointer;
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              color: themed("textColor");
+              border-radius: 50%;
+            }
+
+            .options:hover {
+              background-color: themed("bgSoft");
+              border: themed("border");
+            }
+          }
+        }
+
+        .middle {
+          width: 93%;
+          margin-left: 9px;
+
+          .post-text {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: themed("textColor");
+            font-family: "RubikRegular";
+
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+
+          .post-img {
+            img {
+              width: 90%;
+              object-fit: cover;
+              margin-bottom: 10px;
+
+              @include mobile {
+                height: 120px;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+
+        .bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          width: 70%;
+          gap: 20px;
+          font-family: "RubikRegular";
+
+          .post-reactions {
+            color: themed("textColorSoft");
+            cursor: pointer;
+            padding: 7px;
+            border-radius: 5px;
+
+            .link {
+              color: themed("textColorSoft");
+              text-decoration: none;
+              display: flex;
+              gap: 10;
+              align-items: baseline;
+
+              .icon {
+                font-size: 20px;
+
+                @include mobile {
+                  font-size: 16px;
+                }
+              }
+
+              p {
+                @include mobile {
+                  font-size: 14;
+                }
+              }
+            }
+          }
+
+          .views {
+            display: flex;
+            gap: 6;
+            align-items: baseline;
+          }
+
+          .post-reactions:hover {
+            background-color: themed("bgSoft");
+          }
+        }
+      }
+    }
+  }
+}

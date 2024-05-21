@@ -1,0 +1,49 @@
+@import "../../style.scss";
+
+.adspage-leftbar {
+    @include themify($themes){
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        gap: 5px;
+        flex: 0.5;
+        background-color: themed("cardColor");
+        color: themed("textColor");
+        padding: 50px 10px;
+        position: fixed;
+        top: 55px;
+        height: calc(100vh - 55px);
+        border-right: 1px solid themed("border");
+        overflow: hidden;
+        margin-top: -25px;
+        max-width: 280px;
+
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-family: "RubikRegular";
+            text-decoration: none;
+            color: themed("textColor");
+            padding: 15px 20px;
+            transition-duration: 0.4s;
+            border-radius: 8px;
+
+            .icons {
+                font-size: 24px;
+                color: themed("iconsColor");
+                font-weight: 700;
+            }
+        }
+        
+        .link:hover {
+            background-color: #6c8aa3;
+        }
+    }
+}

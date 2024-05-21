@@ -1,0 +1,12 @@
+@import "../../style.scss";
+
+.no-posts {
+  @include themify($themes) {
+    background-color: themed("cardColor");
+    color: themed("textColor");
+    padding: 10px;
+    border: 1px solid themed("border");
+    border-radius: 8px;
+    font-family: "RubikRegular";
+  }
+}

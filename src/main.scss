@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    // Colors
+    --background-color: #e4e3e3;
+    --button-bg: #435F67;
+    --button-hover-bg: #5a828f;
+    --text-color: #696868;
+    --icon-color: #4B6772;
+
+    // Font sizes
+    --small-fz: 12px;
+    --primary-fz: 14px;
+    --secondary-fz: 16px;
+    --big-fz: 19px;
+
+    // Font families
+    --primary-ff: 'Poppins', sans-serif;
+    --secondary-ff: calibri;
+}

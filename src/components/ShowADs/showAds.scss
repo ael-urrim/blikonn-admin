@@ -1,0 +1,186 @@
+@import "../../style.scss";
+
+.show-ads {
+  @include themify($themes) {
+    border: 1px solid themed("border");
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: themed("cardColor");
+
+    &:hover {
+      background-color: themed("postHover");
+      cursor: pointer;
+    }
+
+    .top {
+      display: flex;
+      gap: 5px;
+
+      .right-left {
+        img {
+          border-radius: 0 10px;
+          object-fit: cover;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      .show-ads-right-right {
+        .authorDetails {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          padding: 0 10px;
+
+          .authorDetails-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .authorName {
+              font-family: "RubikSemiBold";
+              font-size: 16px;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              .link {
+                color: themed("textColor");
+                text-decoration: none;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+
+              img {
+                width: 20px;
+                height: 20px;
+              }
+            }
+
+            .icon {
+              font-size: 16px;
+              color: themed("textColor");
+            }
+          }
+
+          .authorDetails-bottom {
+            .promoted {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              margin-top: 5px;
+              font-size: 13px;
+              margin-left: 0;
+              font-family: "RubikRegular";
+              font-size: 14px;
+              color: #7e7e7e;
+            }
+          }
+        }
+
+        .adDetails {
+          .adDescription {
+            font-family: "RubikRegular";
+            font-size: 14px;
+            margin: 5px 10px;
+            color: themed("textColor");
+          }
+
+          .link {
+            text-decoration: none;
+            color: themed("textColor");
+
+            .ad-link {
+              display: flex;
+              flex-direction: column;
+              width: 90%;
+              background-color: themed("bgSoft");
+              color: themed("textColor");
+              margin: 10px;
+              font-family: "RubikRegular";
+
+              .top {
+                img {
+                  height: 300px;
+                  object-fit: cover;
+                  width: 100%;
+                }
+              }
+
+              .bottom {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+
+                .ad-link-left {
+                  flex: 2;
+
+                  .one {
+                    margin-bottom: 5px;
+                    font-size: 12px;
+                  }
+
+                  .two {
+                    font-size: 14px;
+                  }
+                }
+
+                .ad-link-right {
+                  flex: 0.7;
+                  padding: 5px 3px;
+                  background-color: themed("buttonBg");
+                  color: #fff;
+                  font-size: 14px;
+                  border-radius: 3px;
+                  font-family: calibri;
+                  text-align: center;
+                  font-family: "RubikMedium";
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+
+        .post-reactions {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          font-family: "RubikRegular";
+
+          .ad-interactions {
+            display: flex;
+            align-items: baseline;
+            cursor: pointer;
+            padding: 7px;
+            border-radius: 5px;
+
+            &:hover {
+              background-color: themed("bgSoft");
+            }
+
+            .icon {
+              font-size: 20px;
+              color: themed("textColorSoft");
+            }
+
+            p {
+              margin-left: 1px;
+              color: themed("textColorSoft");
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      margin-left: 20px;
+      font-size: 14px;
+    }
+  }
+}

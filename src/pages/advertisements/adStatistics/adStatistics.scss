@@ -1,0 +1,63 @@
+@import "../../../style.scss";
+
+.ad-statistics {
+  @include themify($themes) {
+    flex: 6;
+    background-color: themed("bgSoft");
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "RubikRegular";
+    overflow: hidden;
+
+    .breadcrumbs {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-family: "RubikRegular";
+
+      p {
+        color: themed("textColor");
+      }
+
+      .link {
+        color: themed("textColor");
+        text-decoration: none;
+      }
+
+      .link:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .page-title {
+      color: themed("textColor");
+      margin-bottom: 10px;
+      font-family: "RubikBold";
+      font-size: 22px;
+    }
+
+    .ad-statistics-card {
+      background-color: themed("cardColor");
+      padding: 20px;
+      border: 1px solid themed("border");
+      border-radius: 5px;
+      color: themed("textColor");
+
+      .ad-chart {
+        flex: 1;
+        background-color: themed("cardColor");
+        padding: 20px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        color: themed("textColor");
+        font-family: "RubikRegular";
+
+        h3 {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
