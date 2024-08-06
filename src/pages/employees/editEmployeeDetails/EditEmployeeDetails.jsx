@@ -47,7 +47,7 @@ const EditEmployeeDetails = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
   const [birthday, setBirthday] = useState("");
   const [picture, setPicture] = useState("");
@@ -58,7 +58,7 @@ const EditEmployeeDetails = () => {
   const [employmentStatus, setEmploymentStatus] = useState("");
   const [employmentType, setEmploymentType] = useState("");
 
-  const addEmployee = async (e) => {
+  const editEmployee = async (e) => {
     setIsloading(true);
     e.preventDefault();
     let imgUrl = "";
@@ -82,7 +82,7 @@ const EditEmployeeDetails = () => {
       lastName,
       email,
       phoneNumber,
-      password,
+      // password,
       address,
       birthday,
       picture: imgUrl,
@@ -138,6 +138,7 @@ const EditEmployeeDetails = () => {
                 <input
                   type="text"
                   defaultValue={firstName || employeeDetails?.firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
 
@@ -146,6 +147,7 @@ const EditEmployeeDetails = () => {
                 <input
                   type="text"
                   defaultValue={middleName || employeeDetails?.middleName}
+                  onChange={(e) => setMiddleName(e.target.value)}
                 />
               </div>
 
@@ -154,6 +156,7 @@ const EditEmployeeDetails = () => {
                 <input
                   type="text"
                   defaultValue={lastName || employeeDetails?.lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
 
@@ -162,6 +165,7 @@ const EditEmployeeDetails = () => {
                 <input
                   type="email"
                   defaultValue={email || employeeDetails?.email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
@@ -170,6 +174,7 @@ const EditEmployeeDetails = () => {
                 <input
                   type="number"
                   defaultValue={phoneNumber || employeeDetails?.phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
               </div>
 
@@ -178,17 +183,24 @@ const EditEmployeeDetails = () => {
                 <input
                   type="text"
                   defaultValue={address || employeeDetails?.address}
+                  onChange={(e) => setAddress(e.target.value)}
                 />
               </div>
 
               <div className="input">
                 <label htmlFor="">Date of Birth</label>
-                <input type="date" />
+                <input
+                  type="date"
+                  onChange={(e) => setBirthday(e.target.value)}
+                />
               </div>
 
               <div className="input">
                 <label htmlFor="">Picture</label>
-                <input type="file" />
+                <input
+                  type="file"
+                  onChange={(e) => setPicture(e.target.files[0])}
+                />
                 <img
                   src={`${process.env.REACT_APP_URL}/images/employees/${employeeDetails?.profilePic}`}
                   alt=""
@@ -221,7 +233,10 @@ const EditEmployeeDetails = () => {
             <div className="right">
               <div className="input">
                 <label htmlFor="">Employment date</label>
-                <input type="date" />
+                <input
+                  type="date"
+                  onChange={(e) => setEmploymentDate(e.target.value)}
+                />
               </div>
 
               <div className="input">
@@ -229,6 +244,7 @@ const EditEmployeeDetails = () => {
                 <input
                   type="number"
                   defaultValue={monthlySalary || employeeDetails?.salary}
+                  onChange={(e) => setMonthlySalary(e.target.value)}
                 />
               </div>
 
@@ -239,7 +255,11 @@ const EditEmployeeDetails = () => {
 
               <div className="input">
                 <label htmlFor="">Department</label>
-                <select name="" id="">
+                <select
+                  name=""
+                  id=""
+                  onChange={(e) => setDepartment(e.target.value)}
+                >
                   <option
                     value="Admin"
                     selected={
@@ -297,7 +317,11 @@ const EditEmployeeDetails = () => {
 
               <div className="input">
                 <label htmlFor="">Position</label>
-                <select name="" id="">
+                <select
+                  name=""
+                  id=""
+                  onChange={(e) => setPosition(e.target.value)}
+                >
                   <option
                     value="HRM"
                     selected={
@@ -353,7 +377,11 @@ const EditEmployeeDetails = () => {
 
               <div className="input">
                 <label htmlFor="">Employment Status</label>
-                <select name="" id="">
+                <select
+                  name=""
+                  id=""
+                  onChange={(e) => setEmploymentStatus(e.target.value)}
+                >
                   <option
                     value="Active"
                     selected={
@@ -399,7 +427,11 @@ const EditEmployeeDetails = () => {
 
               <div className="input">
                 <label htmlFor="">Employment Type</label>
-                <select name="" id="">
+                <select
+                  name=""
+                  id=""
+                  onChange={(e) => setEmploymentType(e.target.value)}
+                >
                   <option
                     value="Staff"
                     selected={
@@ -434,7 +466,9 @@ const EditEmployeeDetails = () => {
           </div>
 
           <div className="bottom">
-            <button>Submit</button>
+            <button disabled={isLoading} onClick={editEmployee}>
+              Submit
+            </button>
           </div>
         </form>
       </div>
