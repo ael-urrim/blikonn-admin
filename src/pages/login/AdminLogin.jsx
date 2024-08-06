@@ -38,6 +38,7 @@ const AdminLogin = () => {
       await login(inputs);
       navigate("/");
     } catch (error) {
+      console.log(error)
       setError(error.response.data);
       setTimeout(() => {
         setError("");
