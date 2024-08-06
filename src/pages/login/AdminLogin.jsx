@@ -1,5 +1,4 @@
 import "./adminLogin.scss";
-
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/authContext";
