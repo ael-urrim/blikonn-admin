@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 
 import {
-  // FaHome,
   FaShoppingCart,
   FaEnvelope,
   FaUsers,
