@@ -24,7 +24,7 @@ jobs:
       env:
         REACT_APP_CLIENT_URL: https://admin.blikonn.com.ng
         REACT_APP_URL: https://adminapi.blikonn.com.ng
-    
+     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.1.0
       with:
