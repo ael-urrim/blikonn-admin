@@ -69,7 +69,7 @@ const EmailBroadcast = () => {
               {emails?.length > 0
                 ? emails.map((mail, index) => (
                     <tr key={index}>
-                      <td>{index}</td>
+                      <td>{index +1}</td>
                       <td>{mail.emailId}</td>
                       <td>{mail.subject}</td>
                       <td>

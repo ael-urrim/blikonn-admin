@@ -85,6 +85,14 @@
 
               .value {
                 font-family: "RubikRegular";
+
+                img {
+                  border: 1px solid themed("border");
+                  border-radius: 5px;
+                  height: 150px;
+                  width: 150px;
+                  object-fit: cover;
+                }
               }
             }
           }

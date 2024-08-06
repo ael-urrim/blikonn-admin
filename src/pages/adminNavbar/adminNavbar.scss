@@ -16,17 +16,23 @@
     z-index: 99;
 
     .left {
-      text-decoration: none;
-      color: themed("logo");
-      font-family: "RubikBold";
-      font-size: 26px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      
+      .link {
+        text-decoration: none;
+        color: themed("logo");
+        font-family: "RubikBold";
+        font-size: 26px;
 
-      @include mobile {
-        font-size: 20px;
-      }
+        @include mobile {
+          font-size: 20px;
+        }
 
-      @include tablet {
-        font-size: 20px;
+        @include tablet {
+          font-size: 20px;
+        }
       }
     }
 

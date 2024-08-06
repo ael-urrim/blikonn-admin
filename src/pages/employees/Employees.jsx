@@ -69,7 +69,7 @@ const Employees = () => {
               {employees?.length > 0
                 ? employees.map((employee, index) => (
                     <tr key={index}>
-                      <td>{index}</td>
+                      <td>{index + 1}</td>
                       <td>{`${employee.firstName} ${employee.lastName}`}</td>
                       <td>{employee.email}</td>
                       <td>{employee.phoneNumber}</td>

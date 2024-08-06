@@ -47,18 +47,15 @@ export const AuthContextProvider = ({ children }) => {
 
   //Get user details
   const [userDetails, setUserDetails] = useState([]);
+  console.log({ userDetails: userDetails});
   useEffect(() => {
-    if (!loggedInUser || !loggedInUser.userId) {
-      setUserDetails([]); // Reset userDetails if loggedInUser is null or userId is falsy
-      return; // Return early to avoid making unnecessary requests
-    }
 
     const cancelToken = axios.CancelToken.source();
 
     const fetchUserDetails = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_URL}/users/loggedInUser/${loggedInUser.userId}`,
+          `${process.env.REACT_APP_URL}/users/loggedInUser/`,
           {
             cancelToken: cancelToken.token,
             withCredentials: true,

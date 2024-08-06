@@ -11,10 +11,10 @@ const Advertisements = () => {
           <div className="right">
             <Link to="/advertisements/approved-adverts" className="link">
               <div className="right">Approved</div>
-            </Link>
+            </Link>||
             <Link to="/advertisements/pending-adverts" className="link">
               <div className="right">Pending</div>
-            </Link>
+            </Link>||
             <Link to="/advertisements/rejected-adverts" className="link">
               <div className="right">Rejected</div>
             </Link>

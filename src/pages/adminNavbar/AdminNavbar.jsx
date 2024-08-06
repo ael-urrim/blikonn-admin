@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { darkModeContext } from "../../context/darkModeContext";
 
-import USERIMG from "../../media/images/user1.jpg";
 import USER1 from "../../media/images/user2.jpg";
 import USER2 from "../../media/images/user3.jpg";
 import USER3 from "../../media/images/user4.jpg";
@@ -13,7 +12,7 @@ import USER6 from "../../media/images/team2.jpg";
 
 //Icons
 import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
-import { FaUserAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaUserAlt, FaSignOutAlt, FaBars } from "react-icons/fa";
 //import { RiAdvertisementFill } from "react-icons/ri";
 import { AiFillSetting } from "react-icons/ai";
 import { MdOutlineHelp } from "react-icons/md";
@@ -24,7 +23,7 @@ import { AuthContext } from "../../context/authContext";
 const AdminNavbar = () => {
   // For the dark mode toggle
   const { toggle, darkMode } = useContext(darkModeContext);
-  const { logout } = useContext(AuthContext);
+  const { logout, userDetails } = useContext(AuthContext);
 
   // For the menu dropdown
   const [openMenuDropdown, setOpenMenuDropdown] = useState(false);
@@ -44,11 +43,40 @@ const AdminNavbar = () => {
     setOpenNotifDropdown(!openNotifDropdown);
   };
 
+  const [menuSwitch, setMenuSwitch] = useState(true);
+  const toggleMenu = () => {
+    const options = document.querySelectorAll(".label");
+    const leftBar = document.querySelector(".admin-leftbar");
+
+    options.forEach((option) => {
+      if (menuSwitch) {
+        option.style.display = "none";
+      } else {
+        option.style.display = "block";
+      }
+    });
+
+    if (menuSwitch) {
+      leftBar.style.maxWidth = "50px";
+    } else {
+      leftBar.style.maxWidth = "180px";
+    }
+
+    setMenuSwitch(!menuSwitch);
+  };
+
   return (
     <div className="admin-navbar">
-      <Link to="/" className="left">
-        Admin Panel
-      </Link>
+      <div className="left">
+        <FaBars
+          className="icon"
+          onClick={toggleMenu}
+          style={{ fontSize: "20px", cursor: "pointer" }}
+        />
+        <Link to="/" className="link">
+          Admin Panel
+        </Link>
+      </div>
 
       <div className="right">
         <div className="notif" onClick={toggleNotifDropDown}>
@@ -67,10 +95,13 @@ const AdminNavbar = () => {
           )}
         </div>
         <div className="user-name">
-          <p>Hi Jane!</p>
+          <p>Hi {userDetails.firstName}!</p>
         </div>
         <div className="user-img" onClick={toggleMenuDropDown}>
-          <img src={USERIMG} alt="" />
+          <img
+            src={`${process.env.REACT_APP_URL}/images/employees/${userDetails?.profilePic}`}
+            alt=""
+          />
         </div>
       </div>
 

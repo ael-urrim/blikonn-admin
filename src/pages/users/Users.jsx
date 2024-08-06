@@ -63,7 +63,7 @@ const Users = () => {
             {userDetails?.length > 0
               ? userDetails.map((user, index) => (
                   <tr key={index}>
-                    <td>{index}</td>
+                    <td>{index + 1}</td>
                     <td>
                       <Link to={`/user-details/${user.userId}`} className="link">
                         {user.fullName ? user.fullName : user.username}

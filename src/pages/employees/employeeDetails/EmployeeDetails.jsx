@@ -53,7 +53,7 @@ const EmployeeDetails = () => {
       <div className="employees-details-card">
         <div className="top">
           <Link
-            to={`/employees/edit-details/${employeeDetails?.employeeId}}`}
+            to={`/employees/edit-details/${employeeDetails?.employeeId}`}
             className="link"
           >
             Edit Details
