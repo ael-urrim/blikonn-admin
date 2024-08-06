@@ -22,8 +22,6 @@ import "./fonts/Rubik-Bold.ttf";
 
 // Loading Screen
 import Overlay from "./components/loadingScreens/Overlay";
-// import ProfileLoading from "./components/loadingScreens/Profile/ProfileLoading";
-// import CreateNewPassword from "./pages/createNewPassword/CreateNewPassword";
 
 // // Components
 // const Navbar = lazy(() => import("./components/navBar/Navbar"));
