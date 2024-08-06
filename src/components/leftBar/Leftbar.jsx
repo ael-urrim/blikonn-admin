@@ -16,7 +16,7 @@ const Leftbar = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
-
+ 
   const fetchUsers = async () => {
     axios.defaults.withCredentials = true;
     try {
