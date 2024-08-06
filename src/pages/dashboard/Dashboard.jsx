@@ -14,7 +14,7 @@ const Dashboard = () => {
   const users = [
     {
       name: "Jan",
-      "Active Users": 200000,
+      "Active Users": 20000,
       "Total Visitors": 25000,
     },
     {
